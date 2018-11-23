@@ -1,0 +1,20 @@
+/*PARENT properties*/
+.fr {
+  display: flex;
+  flex-direction: row;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/*CHILD properties*/
+.f1 {
+  flex: 1;
+}

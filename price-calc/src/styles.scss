@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/SCSS/flex";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Roboto:300,400,500,700,900');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  font-family: 'Lato', 'Roboto',  sans-serif;
+  font-size: 16px;
+}
+
+pcalc-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  & > router-outlet + * {
+    flex: 1;
+    display: flex;
+    box-shadow: inset 0 0 20px 0px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    background-color: ghostwhite;
+  }
+}
