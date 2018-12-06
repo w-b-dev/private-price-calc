@@ -1,0 +1,19 @@
+:host {
+  /*empty*/
+}
+
+.component-root {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0.1rem 0;
+
+  .active {
+    color: blue;
+  }
+
+  .link {
+    background: none;
+    border: none;
+  }
+}
