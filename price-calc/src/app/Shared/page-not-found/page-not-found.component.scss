@@ -1,15 +1,31 @@
 :host {
-  border-color: rgba(220, 20, 60, 0.8);
-  box-shadow: inset 0 0 20px 0px rgba(220, 20, 60, 0.8);
-  background: rgb(220,20,60);
-  background: radial-gradient(circle, rgba(220,20,60,0.5326505602240896) 50%, rgba(220,20,60,0.8) 100%);
+  /*empty*/
 }
 
 .component-root {
   padding: 1rem;
 }
 
-.not-found {
-  font-size: 200px;
-  margin: 0;
+.seconds {
+  top: -82px;
+  position: relative;
+  font-size: xx-large;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
