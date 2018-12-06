@@ -1,2 +1,2 @@
-# private-price-calc
-Mockups for an Angular app that calculates price in multiple steps
+# Calculator app
+Angular app with authentication that calculates price based on multiple user inputs, restrictions on variables and specific source materials.
