@@ -1,0 +1,26 @@
+:host {
+  /*empty*/
+}
+
+.component-root {
+  display: flex;
+  flex: 1;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.expanded {
+  flex: 1;
+}
+
+.status {
+  display: flex;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
