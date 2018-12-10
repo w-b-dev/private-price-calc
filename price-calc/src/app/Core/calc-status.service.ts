@@ -4,6 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CalcStatusService {
+  private tabOpen = '';
 
-  constructor() { }
+  constructor() {}
+
+  updateTabOpen(x) {
+    this.tabOpen = x;
+    console.info('NEW OPEN TAB: ' + x);
+  }
+
+  getOpenTab() {
+    return this.tabOpen;
+  }
 }

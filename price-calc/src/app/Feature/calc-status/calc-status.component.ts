@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalcStatusService } from 'src/app/Core/calc-status.service';
 
 @Component({
   selector: 'pcalc-calc-status',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalcStatusComponent implements OnInit {
 
-  constructor() { }
+  constructor(private statusService: CalcStatusService) {}
 
   ngOnInit() {
   }
-
 }

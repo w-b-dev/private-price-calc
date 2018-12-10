@@ -3,8 +3,8 @@
     <pcalc-calc-status></pcalc-calc-status>
   </section>
   <section class="steps">
-    <pcalc-calc-step1 (expanded)="updateExpandedChild($event)"></pcalc-calc-step1>
-    <pcalc-calc-step2 (expanded)="updateExpandedChild($event)"></pcalc-calc-step2>
-    <pcalc-calc-step3 class="expanded" (expanded)="updateExpandedChild($event)"></pcalc-calc-step3>
+    <pcalc-calc-step1 class="closed" (expanded)="monitor(e)"></pcalc-calc-step1>
+    <pcalc-calc-step2 class="closed" (expanded)="monitor(e)"></pcalc-calc-step2>
+    <pcalc-calc-step3 class="closed" (expanded)="monitor(e)"></pcalc-calc-step3>
   </section>
 </article>

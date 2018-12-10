@@ -1,3 +1,6 @@
-<span class="component-root">
-  calc-status works!
+<span *ngIf="this.statusService.getOpenTab() !== ''" class="component-root">
+  Status: the tab that is open is {{this.statusService.getOpenTab()}}.
+</span>
+<span *ngIf="this.statusService.getOpenTab() === ''" class="component-root">
+  Status: no tab is open.
 </span>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CalcStatusService } from 'src/app/Core/calc-status.service';
 
 @Component({
   selector: 'pcalc-calc-step2',
@@ -7,27 +8,30 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class CalcStep2Component implements OnInit {
 
-  @Output() expanded: EventEmitter<number> = new EventEmitter();
-
-  constructor() {
-  }
+  constructor(private StatusService: CalcStatusService) {}
 
   ngOnInit() {
   }
 
   expand(event) {
-    if (event.target.parentElement.className === 'expanded') {
-      /*ALREADY EXPANDED*/
-      // event.target.parentElement.classList.remove('expanded');
-    } else {
-      this.expanded.emit(2);
-      const current = event.target.parentElement.parentElement.getElementsByClassName('expanded');
-      console.info(current);
-      Array.prototype.forEach((e,i,a) => {
-        console.info(i, e);
-        // e.classList.remove('expanded');
-      });
-      event.target.parentElement.classList.add('expanded');
+    const allElements = event.target.parentElement.parentElement.childNodes;
+    for (const e of allElements) {
+      console.info('💖:', e.localName);
+      if (e.className === 'expanded' && e === event.target.parentElement) {
+        console.info(e.localName, 'ALREADY EXPANDED 😎');
+      }
+      if (e.className === 'expanded' && e !== event.target.parentElement) {
+        e.classList.remove('expanded');
+        e.classList.add('closed');
+      }
+      if (e.className === 'closed' && e === event.target.parentElement) {
+        e.classList.remove('closed');
+        e.classList.add('expanded');
+        this.StatusService.updateTabOpen(e.localName);
+      }
+      if (e.className === 'closed' && e !== event.target.parentElement) {
+        console.info(e.localName, 'ALREADY CLOSED 😴');
+      }
     }
   }
 }
