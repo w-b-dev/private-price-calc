@@ -16,6 +16,7 @@ export class AuthenticationService implements OnInit {
   };
 
   firstTime = true;
+  validation = 'Nops...';
 
   constructor() {
     firebase.initializeApp(this.firebaseObject);
@@ -25,20 +26,25 @@ export class AuthenticationService implements OnInit {
   }
 
   registerUser(u, p) {
-    u === '' ? u = 'daniel@codein.ca' : null;
-    p === '' ? p = 'kkkkkk' : null;
-    firebase
+
+    const authResult = firebase
       .auth()
       .createUserWithEmailAndPassword(u, p)
       .then(x => {
         this.firstTime = false;
         console.info('RETURNED RESPONSE', x);
-        x.additionalUserInfo.isNewUser ? console.info('USER REGISTERED', x.user.email) : null;
+        if (x.additionalUserInfo.isNewUser) {
+          this.validation = x.additionalUserInfo.username;
+          return console.info('USER REGISTERED', x.user.email);
+        }
       })
       .catch(function (error) {
-        error.code === 'auth/email-already-in-use' ? console.info('😒', error.code) : console.error(error.code);
+        console.error(error.code);
         console.error(error.message);
-        return false;
-      }).finally(() => console.info('DONE'));
+        return error;
+      });
+
+    console.info('AUTH RESULT IS', authResult);
+    console.info('Validation', this.validation);
   }
 }
