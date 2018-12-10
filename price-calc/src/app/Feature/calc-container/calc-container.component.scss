@@ -13,25 +13,30 @@
 
 .status {
   display: flex;
+  border-right: 4px solid #333;
 }
 
 .steps {
   display: flex;
   flex-direction: column;
   flex: 1;
-   & > * {
+
+  & > * {
+    display: flex;
+    padding: 1rem;
     transition-delay: 0ms;
     transition-duration: 500ms;
     transition-property: all;
     transition-timing-function: ease-in-out;
     min-height: 3.5rem;
-   }
+    border-bottom: 1px solid #333333;
+  }
 
   .expanded {
     flex: 1;
   }
-  
+
   .closed {
-    flex: unset!important;
+    flex: unset !important;
   }
 }

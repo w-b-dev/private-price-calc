@@ -1,6 +1,6 @@
-<span *ngIf="this.statusService.getOpenTab() !== ''" class="component-root">
-  Status: the tab that is open is {{this.statusService.getOpenTab()}}.
+<span *ngIf="statusService.getOpenTab() !== ''" class="component-root">
+  Tab: {{statusService.getOpenTab()}}.
 </span>
-<span *ngIf="this.statusService.getOpenTab() === ''" class="component-root">
-  Status: no tab is open.
+<span *ngIf="statusService.getOpenTab() === ''" class="component-root">
+  No tab is open.
 </span>
