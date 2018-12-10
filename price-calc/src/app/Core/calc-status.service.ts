@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 export class CalcStatusService {
   private tabOpen = '';
 
-  constructor() {}
+  constructor() {
+    this.tabOpen = 'pcalc-calc-step1';
+  }
 
   updateTabOpen(x) {
     this.tabOpen = x;
