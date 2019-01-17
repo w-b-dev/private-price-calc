@@ -8,7 +8,7 @@ import { CalcStatusService } from 'src/app/Core/calc-status.service';
 })
 export class CalcStatusComponent implements OnInit {
 
-  constructor(private statusService: CalcStatusService) {}
+  constructor(public statusService: CalcStatusService) {}
 
   ngOnInit() {
   }
