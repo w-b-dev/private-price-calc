@@ -1,19 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<nav style="display: flex; justify-content: space-around; width: 100%;">
-  <span routerLink="/">
-    Empty route /
-  </span>
-  <span routerLink="/start">
-    Start (doesn't exist)
-  </span>
-  <span routerLink="/calculator">
-    Calculator (should load an extra module)
-  </span>
+<nav class="component-root">
+  <!--<input type="button" routerLink="/start" value="'/start'" routerLinkActive="active">-->
+  <input type="button" class="link" routerLink="/calculator" value="Calculator" routerLinkActive="active"
+         title="should load an extra module">
+  <input type="button" class="link" routerLink="/login" value="Sign in" routerLinkActive="active"
+         title="should only show if unregistered">
 </nav>
 
 <router-outlet></router-outlet>

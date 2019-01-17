@@ -17,12 +17,6 @@ const routes: Routes = [
   {
     path: 'calculator',
     loadChildren: './Feature/feature.module#FeatureModule',
-    // children: [
-    //   {
-    //     path: '',
-    //     component: CalcContainerComponent
-    //   }
-    // ]
   },
   {
     path: '**',
