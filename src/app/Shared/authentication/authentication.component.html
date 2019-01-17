@@ -1,5 +1,4 @@
 <article class="component-root f1 fc">
-  <p>{{ authService.validation }}</p>
   <label class="fr bad">
     <span class="f1">email</span>
     <input type="email" [(ngModel)]="email" class="f1" placeholder="email">
@@ -8,8 +7,14 @@
     <span class="f1">password</span>
     <input type="password" [(ngModel)]="password" class="f1" placeholder="password">
   </label>
-  <button type="submit" *ngIf="authService.firstTime" (click)="authService.registerUser(email, password)">Register new
-    user
+  <button type="submit"
+          *ngIf="authService.firstTime"
+          (click)="authService.registerUser(email, password)">
+    Register new user
   </button>
-  <!--<button type="submit" *ngIf="!authService.firstTime" (click)="authService.signIn(email, password)">Sign In</button>-->
+  <button type="submit"
+          *ngIf="!authService.firstTime"
+          (click)="authService.signIn(email, password)">
+    Sign In
+  </button>
 </article>
