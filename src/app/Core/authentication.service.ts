@@ -1,19 +1,13 @@
 import { Injectable, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService implements OnInit {
 
-  firebaseObject = {
-    apiKey: 'AIzaSyA64gK1tBuawveQQiGDyRPM-TbhdvSnlco',
-    authDomain: 'temp-artistic-dec5th.firebaseapp.com',
-    databaseURL: 'https://temp-artistic-dec5th.firebaseio.com',
-    projectId: 'temp-artistic-dec5th',
-    storageBucket: 'temp-artistic-dec5th.appspot.com',
-    messagingSenderId: '307284383861',
-  };
+  firebaseObject = environment.firebaseObject;
 
   firstTime = true;
   validation = 'Nops...';

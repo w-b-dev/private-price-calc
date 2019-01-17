@@ -1,3 +1,6 @@
+#MAKE SURE TO IGNORE BOTH THE ENVIRONMENT FILES
+/src/environments/environment.prod.ts
+/src/environments/environment.ts
 # Logs
 logs
 *.log
