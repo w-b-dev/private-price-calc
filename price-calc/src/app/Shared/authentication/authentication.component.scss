@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+}
+
+.component-root {
+  padding: 1rem;
+  max-width: 400px;
+  width: 50vw;
+  margin: auto;
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    span {
+      text-align: end;
+    }
+
+    &.good span::after {
+      color: green;
+      font-size: 1.5rem;
+      content: "✔";
+    }
+
+    &.bad span::after {
+      color: orange;
+      font-size: 1.5rem;
+      content: "⚠";
+    }
+  }
+
+  input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+}

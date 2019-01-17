@@ -1,0 +1,15 @@
+:host {
+  //empty
+}
+
+.hover-link {
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+
+  &:before {
+    content: '🔗';
+  }
+}
