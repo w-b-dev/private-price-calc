@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './Shared/shared.module';
 import { AuthenticationService } from './Core/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
 
 /**
  * NgModules are containers for a cohesive block of code dedicated to an application domain,
@@ -28,6 +29,7 @@ import { AuthenticationService } from './Core/authentication.service';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule
   ],
   providers: [ AuthenticationService ],
   bootstrap: [ AppComponent ],
